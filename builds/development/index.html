@@ -1,14 +1,47 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
   <meta charset="UTF-8">
   <title>day #</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css">
 </head>
-<body>
-  <span class="btn btn-primary">ss</span>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<body ng-controller="myController as myCtrl">
+
+
+
+
+
+    <div class="container">
+        <div ng-repeat="data in myCtrl.testData">
+            <span type="button" class="btn btn-info" data-toggle="modal" data-target="#window{{data.id}}">{{data.name}}</span>
+            <br>
+            <div class="modal fade" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" id="window{{data.id}}">
+                <div class="modal-dialog modal-sm">
+                    <div class="modal-content">
+                        His age is {{data.age}}, and he likes {{data.habbit}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="js/lib/angular/angular.min.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/controllers/my-controller.js"></script>
+
 </body>
 </html>
